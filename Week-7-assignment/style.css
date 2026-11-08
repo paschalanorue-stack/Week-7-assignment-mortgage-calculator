@@ -1,0 +1,289 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+:root {
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+}
+
+/* BODY */
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--slate-100);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+}
+
+/* MAIN CONTAINER */
+
+.calculator-container {
+    background: var(--white);
+
+    max-width: 1000px;
+    width: 100%;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* LEFT PANEL */
+
+.form-section {
+    padding: 2rem;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: var(--slate-900);
+}
+
+.header a {
+    color: var(--slate-500);
+    font-size: 0.9rem;
+}
+
+/* FORM */
+
+#mortgage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--slate-700);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* ROW */
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+    display: flex;
+    border: 1px solid var(--slate-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.input-group span {
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+
+    padding: 1rem;
+
+    font-weight: 700;
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* RADIOS */
+
+.radio-option {
+    display: flex !important;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    border: 1px solid var(--slate-300);
+    border-radius: 8px;
+
+    padding: 1rem;
+
+    cursor: pointer;
+
+    margin-bottom: 0.75rem;
+}
+
+.radio-option input {
+    width: 18px;
+    height: 18px;
+}
+
+/* BUTTON */
+
+.calculate-btn {
+    border: none;
+    border-radius: 999px;
+
+    padding: 1rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    background-color: var(--lime);
+    color: var(--slate-900);
+
+    cursor: pointer;
+}
+
+.calculate-btn:hover {
+    opacity: 0.9;
+}
+
+/* ERROR MESSAGES */
+
+.error-message {
+    display: block;
+    margin-top: 0.4rem;
+
+    color: var(--red);
+    font-size: 0.8rem;
+}
+
+/* RESULTS PANEL */
+
+.results-section {
+    background-color: var(--slate-900);
+
+    color: var(--white);
+
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom-left-radius: 80px;
+}
+
+#empty-state {
+    text-align: center;
+}
+
+#empty-state img {
+    max-width: 200px;
+    margin-bottom: 1.5rem;
+}
+
+#empty-state h2 {
+    margin-bottom: 1rem;
+}
+
+#empty-state p {
+    color: var(--slate-300);
+    line-height: 1.6;
+}
+
+/* RESULTS STATE */
+
+#results-state h2 {
+    margin-bottom: 1rem;
+}
+
+#results-state p {
+    color: var(--slate-300);
+    line-height: 1.6;
+}
+
+.results-card {
+    margin-top: 2rem;
+
+    background-color: hsl(202, 60%, 12%);
+    border-top: 4px solid var(--lime);
+
+    border-radius: 10px;
+
+    padding: 1.5rem;
+}
+
+.results-card h3 {
+    color: var(--lime);
+
+    font-size: 3rem;
+
+    margin: 1rem 0;
+}
+
+.results-card hr {
+    border: none;
+    height: 1px;
+
+    background: var(--slate-700);
+
+    margin: 1.5rem 0;
+}
+
+.results-card h4 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .calculator-container {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .results-section {
+        border-bottom-left-radius: 0;
+    }
+
+    .form-section,
+    .results-section {
+        padding: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
